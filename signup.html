@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Local style sheet relative to workspace folder -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.min.css"/>
+</head>
+
+<body>
+    <div class="main_container_full">
+        <div class="col_4 animate__animated animate__bounceIn" >
+            <h2>Destiny</h2>
+            <h1>Sign Up</h1>
+            <p>Lorem ipsum dolar sit amet</p>
+            <div class="form">
+                
+                <div class="form_group">
+                    <input type="text" id="name" class="form_control" name="text" placeholder="Full Name">
+                </div>
+                <div class="form_group">
+                    <input type="email" id="email" class="form_control" name="text" placeholder="Email">
+                </div>
+                <div class="form_group">
+                    <input type="email" id="alt_email" class="form_control" name="text" placeholder="Alternate Email">
+                </div>
+                <div class="form_group">
+                    <input type="number" id="phone_no" class="form_control" name="text" placeholder="Phone Number" >
+                </div>
+                <div class="form_group">
+                    <input type="password" id="password" class="form_control" name="text" placeholder="Password" >
+                </div>
+                
+                <p class="pull_right txt_bold">Between 8 and <span class="color_one"> 72 Characters</span></p>
+                <div class="text_center">
+                    <button type="submit" id="submit" class="btn_primary">Join for Free</button>
+
+                    <p>Already on Destiny? <a href="#" class="color_two"> Log in</a></p>
+                    <p class="txt_bold">Sign up with your Social Link</p>
+
+                    <button type="submit" id="submit" class="social_btn"><img src="./images/fb.png" width="30px"/></button>
+                    <button type="submit" id="submit" class="social_btn"><img src="./images/google.png" width="30px"/></button>
+                    <button type="submit" id="submit" class="social_btn"><img src="./images/link.png" width="30px"/></button>
+                </div>
+
+                
+                
+            </div>
+        </div>
+        <div class="col_8"><img src="./images/img2_opt.jpg" class="img1"/></div>
+    </div>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#submit").click(function(){
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var confirm_password = $("#confirm_password").val();
+    
+    if (name == '' ) {
+        alert('Name Field is Empty');
+    }
+    else if (email == '' ) {
+        alert('Email Field is Empty');
+    }
+    else if (password == '' ) {
+        alert('Password Field is Empty');
+    }
+    else if (confirm_password == '' ) {
+        alert('Confirm Password Field is Empty');
+    }
+    else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+        alert('Please Enter Valid Email Address');
+    }
+    else if (password.length < 8) {
+        alert('Password Length must be 8 Character');
+    }
+    else if (password != confirm_password) {
+        alert('Password Not Match');
+    }
+  });
+});
+</script>
