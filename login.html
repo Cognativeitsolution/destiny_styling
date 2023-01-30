@@ -13,37 +13,49 @@
 </head>
 
 <body>
-    <div class="container_login animate__animated animate__bounceIn" >
-        <h1 class="text_center">Employment Agency Tool</h1>
-        <h1 class="color_three text_center">Log-In</h1>
-        <div class="form">
-            
-            <div class="form_group">
-                <input type="email" id="email" class="form_control" name="text" placeholder="Email">
+    <div class="main_container_full">
+        <div class="col_4 animate__animated animate__bounceIn" >
+            <img src="./images/destiny_logo.png" width="150"/>
+            <h1>Welcome Back</h1>
+            <div class="tab-header">
+                <button class="tab-btn student_tab tab_active">Student</button>
+                <button class="tab-btn instructor_tab">Instructor</button>
             </div>
-            <div class="form_group">
-                <input type="password" id="password" class="form_control" name="text" placeholder="Password">
+            <div class="form">
+                <div class="tab_content_student">
+                    <div class="form_group">
+                        <input type="email" id="email" class="form_control" name="text" placeholder="Email">
+                    </div>
+                    <div class="form_group">
+                        <input type="password" id="password" class="form_control" name="text" placeholder="Password" >
+                    </div>
+                </div>
+                <div class="tab_content_instructor" style="display: none;">
+                    <div class="form_group">
+                        <input type="email" id="email" class="form_control" name="text" placeholder="Email">
+                    </div>
+                    <div class="form_group">
+                        <input type="password" id="password" class="form_control" name="text" placeholder="Password" >
+                    </div>
+                </div>
+                
+                <p class="pull_right txt_bold">Between 8 and <span class="color_one"> 72 Characters</span></p>
+                <div class="text_center">
+                    <button type="submit" id="submit" class="btn_primary">Login</button>
+                    <p><a href="#" class="txt_bold">Forgot Password</a></p>
+                    <p>Not an Account Create Account on Destiny? <a href="#" class="color_two"> Sign up</a></p>
+                    <p class="txt_bold">Sign up with your organization</p>
+
+                    <button type="submit" id="submit" class="social_btn"><img src="./images/fb.png" width="30px"/></button>
+                    <button type="submit" id="submit" class="social_btn"><img src="./images/google.png" width="30px"/></button>
+                    <button type="submit" id="submit" class="social_btn"><img src="./images/link.png" width="30px"/></button>
+                </div>
+
+                
+                
             </div>
-            <label class="checkcontainer">Remember me
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkcontainer pull_right">
-                <a href="#" class="text_right color_two"> Forgot Password</a>
-            </label>
-            
-            <p class="text_right mt0">Register yourself by cliking <a href="#" class="color_two"> Here</a></p>
-            
-            <img src="images/google-recaptcha.png" width="170" />
-            
-            <div class="text_center">
-                <h3>OR</h3>
-                <button type="submit" class="btn_light logo_google">SIGN-IN WITH GOOGLE</button>
-                <button type="submit" class="btn_light logo_link">SIGN-IN WITH LINKEDIN</button>
-                <button type="submit" id="submit" class="btn_primary">LOGIN</button>
-            </div>
-            
         </div>
+        <div class="col_8"><img src="./images/img2_opt.jpg" class="img1"/></div>
     </div>
 </body>
 
@@ -67,6 +79,19 @@ $(document).ready(function(){
     else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
         alert('Please Enter Valid Email Address');
     }
+  });
+
+  $(".student_tab").click(function(){
+    $(".student_tab").addClass('tab_active');
+    $(".instructor_tab").removeClass('tab_active');
+    $(".tab_content_instructor").hide();
+    $(".tab_content_student").show();
+  });
+  $(".instructor_tab").click(function(){
+    $(".student_tab").removeClass('tab_active');
+    $(".instructor_tab").addClass('tab_active');
+    $(".tab_content_instructor").show();
+    $(".tab_content_student").hide();
   });
 });
 </script>
