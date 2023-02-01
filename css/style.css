@@ -1,19 +1,23 @@
 @font-face {
-    font-family: unbuntu_reg;
-    src: url(fonts/Ubuntu-Regular.ttf);
+    font-family: font_light;
+    src: url(fonts/SourceSansPro-Light.ttf);
   }
 @font-face {
-    font-family: unbuntu_bold;
-    src: url(fonts/Ubuntu-Bold.ttf);
+    font-family: font_reg;
+    src: url(fonts/SourceSansPro-Regular.ttf);
+}  
+@font-face {
+    font-family: font_bold;
+    src: url(fonts/SourceSansPro-Bold.ttf);
 }  
 *{
-    font-family: unbuntu_reg;
+    font-family: font_reg;
 }
 body{
     margin:0px;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: unbuntu_bold;
+    font-family: font_bold;
 }
 input[type="radio"]{
     background-color: #d9d9d9;
@@ -21,7 +25,7 @@ input[type="radio"]{
     color:#0655d0;
 }
 p{
-    font-family: unbuntu_reg;
+    font-family: font_reg;
     font-size: 14px;
     padding:10px;
 }
@@ -416,17 +420,16 @@ button{
 .form_group{
     margin-top:20px;
     margin-bottom:10px;
-    overflow: hidden;
 }
 .form_control::placeholder {
-    font-family: unbuntu_reg;
+    font-family: font_reg;
     color: #888;
 }
 .form_control{
     border:none;
     border-bottom:1px solid #888;
     background: none;
-    padding:10px;
+    padding:5px 0px;
     display: block;
     width: 100%;
     font-size:14px;
@@ -441,6 +444,9 @@ input:focus {
 }
 .lightbox{
     display: none;
+}
+.iti{
+    width: 100%;
 }
 .container_leftbar{
     width:15%;
